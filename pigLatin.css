@@ -1,0 +1,44 @@
+body {
+	background-color: lightgray;
+	background-image: url("piglet-3741880_1280.jpg");
+	background-repeat: no-repeat;
+	background-size: 1800px 1000px;
+	overflow: hidden;
+}
+h1 {
+	text-align: center;
+	font-size: 3rem;
+	color: pink;
+}
+#display-element {
+	text-align: center;
+}
+#userEntry {
+	margin: 0 20% 1%;
+	width: 60%;
+	height: 1.75rem;
+	font-size: 1.5rem;
+}
+
+#buttons {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+}
+.translateButton {
+	margin: 2% 2%;
+	background-color: pink;
+	font-size: 1.25rem;
+	width: 10%;
+}
+#translation {
+	font-size: 1.5rem;
+	color: black;
+	background-color: pink;
+	border: 2px solid;
+	padding: 15px;
+	width: 600px;
+	resize: both;
+	overflow: auto;
+	margin: 0 auto;
+}

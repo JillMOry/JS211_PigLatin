@@ -3,19 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<link rel="stylesheet" href="pigLatin.css" />
 		<script src="main.js"></script>
 	</head>
 
 	<body>
 		<h1>Translate to Pig Latin!</h1>
-		<hr />
+		<br />
 		<div id="display-element">
 			<input type="text" id="userEntry" /><br />
-			<h3 id="translation"></h3>
+			<div id="translation"></div>
 		</div>
-		<button onclick="sentance()">
-			Translate!
-		</button>
-		<hr />
+		<div id="buttons">
+			<button class="translateButton" onclick="sentance()">
+				Translate!
+			</button>
+			<button class="translateButton" onClick="reload()">Reset</button>
+		</div>
 	</body>
 </html>

@@ -11,16 +11,22 @@
 // });
 
 const pigLatin = (word) => {
+	// debugger;
+	if (word == "") {
+		window.location.reload();
+		alert("enter word or phrase to be translated");
+		return null;
+	}
 	const firstLetter = word.charAt(0);
-	// debugger; // debugger is one of my favorite tools!
 	console.log(firstLetter);
-	const stringWord = word.split("");
+	const removeNonAlpha = word.replace(/[&\/\\#,+()$~%.!'":*?<>{}]/g, "");
+	const stringWord = removeNonAlpha.split("");
+	// string = string.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
 	let vowel = ["a", "e", "i", "o", "u"];
 	// for words starting with a vowel
 	if (vowel.indexOf(firstLetter) >= 0) {
 		const newWord = word + "yay";
 		return newWord;
-		// document.getElementById("translation").innerHTML = newWord;
 	}
 
 	// loop to test for words with y as a vowel
@@ -56,18 +62,26 @@ const sentance = () => {
 		translatedArray[wordIndex] = pigLatin(wordArray[wordIndex]);
 	}
 	const newSentance = translatedArray.join(" ");
-	document.getElementById("translation").innerHTML = newSentance;
+	const cleanedSentance = newSentance.trim().toLowerCase();
+	document.getElementById("translation").innerHTML = cleanedSentance;
 };
+
+const reload = () => {
+	window.location.reload();
+};
+{
+	/* <button onClick="window.location.reload();">Refresh Page</button> */
+}
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
-// to close it ctrl + C
-const getPrompt = () => {
-	rl.question("word ", (answer) => {
-		console.log(pigLatin(answer));
-		getPrompt();
-	});
-};
+// // to close it ctrl + C
+// const getPrompt = () => {
+// 	rl.question("word ", (answer) => {
+// 		console.log(pigLatin(answer));
+// 		getPrompt();
+// 	});
+// };
 
 // // Unit Tests
 // // You use them run the command: npm test main.js
